@@ -1,5 +1,9 @@
 ---
 import Color from "./color.astro";
+import Cell from "./cell.astro";
+import ColorName from "./color-name.astro";
+
+const numbers = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
 
 const allColors = {
   red: [
@@ -289,12 +293,21 @@ const allColors = {
     "bg-stone-950",
   ],
 } satisfies Record<string, string[]>;
+
+const capitalize = (s: string) => {
+  return s.charAt(0).toUpperCase() + String(s).slice(1);
+};
 ---
 
 <div class="flex flex-col gap-4">
+  <div class="flex gap-4">
+    <ColorName />
+    {numbers.map((number) => <Cell class="w-8">{number}</Cell>)}
+  </div>
   {
     Object.keys(allColors).map((key) => (
       <div class="flex gap-4">
+        <ColorName>{capitalize(key)}</ColorName>
         {allColors[key as keyof typeof allColors].map((color) => (
           <Color class={color} />
         ))}
