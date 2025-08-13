@@ -27,10 +27,10 @@ const numbers = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
 
 console.log("{");
 for (const color of colors) {
-  console.log(`${color}:[`);
+  console.log(`${color}:{`);
   for (const number of numbers) {
-    console.log(`"bg-${color}-${number}",`);
+    console.log(`"${number}": "bg-${color}-${number}",`);
   }
-  console.log("],");
+  console.log("},");
 }
 console.log("}");
