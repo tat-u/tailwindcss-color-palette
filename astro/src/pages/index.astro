@@ -1,8 +1,9 @@
 ---
 import "../styles/global.css";
-import Layout from '../layouts/layout.astro';
+import RootLayout from "../layouts/root-layout.astro";
+import Palette from "../components/palette.astro";
 ---
 
-<Layout>
-	<div class="text-3xl font-bold underline m-auto bg-red-500">Hello, Tailwind CSS in Astro!!</div>
-</Layout>
+<RootLayout>
+  <Palette />
+</RootLayout>
