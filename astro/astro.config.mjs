@@ -7,4 +7,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  site: "https://tat-u.github.io",
+  base: "/tailwindcss-color-palette/",
 });
